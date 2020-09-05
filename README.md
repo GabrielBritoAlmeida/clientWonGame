@@ -1,5 +1,5 @@
 
-![React Avançado](https://raw.githubusercontent.com/React-Avancado/boilerplate/master/public/img/logo-gh.svg)
+![React](https://github.com/GabrielBritoAlmeida/clientWonGame/blob/master/public/img/logo-gh.svg)
 
 Project with [Next.js](https://nextjs.org/), for studies with [React Avançado](https://github.com/GabrielBritoAlmeida/clientWonGame), Typescript, Tests, among other trends of good practices to program.
 
