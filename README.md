@@ -1,5 +1,5 @@
 
-![React](https://github.com/GabrielBritoAlmeida/clientWonGame/blob/master/public/img/icon-192.png?raw=true) React
+![React](https://github.com/GabrielBritoAlmeida/clientWonGame/blob/master/public/img/logo-gh.svg)
 
 Project with [Next.js](https://nextjs.org/), for studies with [React Avançado](https://github.com/GabrielBritoAlmeida/clientWonGame), Typescript, Tests, among other trends of good practices to program.
 
