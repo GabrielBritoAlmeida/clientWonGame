@@ -6,4 +6,22 @@ export default {
   component: Logo
 } as Meta
 
-export const Default: Story<LogoProps> = (args) => <Logo {...args} />
+export const Desktop: Story<LogoProps> = (args) => <Logo {...args} />
+export const Mobile: Story<LogoProps> = (args) => (
+  <Logo hideOnMobile {...args} />
+)
+
+Desktop.parameters = {
+  backgrounds: {
+    default: 'dark'
+  }
+}
+
+Mobile.parameters = {
+  backgrounds: {
+    default: 'dark'
+  },
+  viewport: {
+    defaultViewport: 'mobile1'
+  }
+}
