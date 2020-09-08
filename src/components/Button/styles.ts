@@ -1,6 +1,5 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 import { ButtonProps } from '.'
-import theme from 'styles/theme'
 
 type WrapperProps = Pick<ButtonProps, 'size'>
 
