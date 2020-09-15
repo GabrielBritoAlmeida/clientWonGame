@@ -39,3 +39,21 @@ export const MenuGroup = styled.div`
     }
   `}
 `
+
+type MenuFullProps = {
+  isOpen: boolean
+}
+
+export const MenuFull = styled.nav<MenuFullProps>`
+  ${({ theme, isOpen }) => css`
+    background: ${theme.colors.white};
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    overflow: hidden;
+    opacity: ${isOpen ? 1 : 0};
+  `}
+`
