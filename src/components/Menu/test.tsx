@@ -29,4 +29,21 @@ describe('<Menu />', () => {
     expect(fullMenuElement.getAttribute('aria-hidden')).toBe('true')
     expect(fullMenuElement).toHaveStyle({ opacity: 0 })
   })
+
+  it('should show register box when logged out', () => {
+    renderWithTheme(<Menu />)
+
+    expect(screen.getByText(/Log in now/i)).toBeInTheDocument()
+    expect(screen.getByText(/Sign Up/i)).toBeInTheDocument()
+  })
+
+  it('should show wishilight and account logged out', () => {
+    renderWithTheme(<Menu username="Gabs" />)
+
+    expect(screen.getByText(/My Acount/i)).toBeInTheDocument()
+    expect(screen.getByText(/Wishlist/i)).toBeInTheDocument()
+
+    expect(screen.queryByText(/Log in now/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/Sign Up/i)).not.toBeInTheDocument()
+  })
 })
