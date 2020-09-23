@@ -1,5 +1,5 @@
 import Button from 'components/Button'
-import { title } from 'process'
+
 import * as S from './styles'
 
 export type BannerProps = {
@@ -18,7 +18,7 @@ const Banner = ({
   buttonLink
 }: BannerProps) => (
   <S.Wrapper>
-    <S.Image src={img} role="img" arial-label={title} />
+    <S.Image src={img} role="img" aria-label={title} />
 
     <S.Caption>
       <S.Title>{title}</S.Title>

@@ -1,11 +1,28 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import { renderWithTheme } from 'utils/tests/helpers'
 
 import Banner from '.'
 
 describe('<Banner />', () => {
   it('should render correctly', () => {
-    // Verifique se o title existe renderizado (.toBeIntheDocument()),
+    const props = {
+      img: 'https://source.unsplash.com/user/willianjusten/1042x580',
+      title: 'Defy death',
+      subtitle: '<p>Play the new <strong>CrashLands</strong> season',
+      buttonLabel: 'Buy now',
+      buttonLink: '/games/defy-death'
+    }
+
+    renderWithTheme(<Banner {...props} />)
+    // Verifique se o title existe renderizado (.toBeIntheDocument())
+    expect(
+      screen.getByRole('heading', { name: /defy death/i })
+    ).toBeInTheDocument()
     //verifique se o subtitle existe renderizado
-    // verifique se a imagem existe rederizada
+    expect(
+      screen.getByRole('heading', { name: /play the new/i })
+    ).toBeInTheDocument()
+    // verifique se a imagem existe renderizada
+    expect(screen.getByRole('img', { name: /defy death/i })).toBeInTheDocument()
   })
 })
