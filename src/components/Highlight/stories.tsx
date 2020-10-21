@@ -7,6 +7,7 @@ export default {
   args: {
     title: 'Title',
     subtitle: 'Subtitle',
+    backgroundImage: '/img/red-dead-img.jpg',
     buttonLabel: 'Buy now',
     buttonLink: '/ref'
   }
