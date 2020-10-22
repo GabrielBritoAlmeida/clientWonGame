@@ -8,6 +8,7 @@ export default {
     title: 'Title',
     subtitle: 'Subtitle',
     backgroundImage: '/img/red-dead-img.jpg',
+    floatImage: '/img/red-dead-float.png',
     buttonLabel: 'Buy now',
     buttonLink: '/ref'
   }
