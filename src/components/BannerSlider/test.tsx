@@ -35,9 +35,6 @@ describe('<BannerSlick />', () => {
 
     expect(container.querySelector('.slick-vertical')).toBeInTheDocument()
 
-    expect(screen.getByRole('button', { name: /1/i })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /2/i })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /3/i })).toBeInTheDocument()
     // expect(container.firstChild).toMatchSnapshot()
   })
 
@@ -58,5 +55,11 @@ describe('<BannerSlick />', () => {
     expect(
       screen.getByRole('heading', { name: /defy death 3/i, hidden: true })
     ).toBeInTheDocument()
+  })
+
+  it('should render with the dots', () => {
+    const { container } = renderWithTheme(<BannerSlick items={items} />)
+
+    expect(container.querySelector('.slick-vertical')).toBeInTheDocument()
   })
 })

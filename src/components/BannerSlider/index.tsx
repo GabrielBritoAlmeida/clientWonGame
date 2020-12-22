@@ -24,7 +24,7 @@ const settings: SliderSettings = {
   ]
 }
 
-const BannerSlick = ({ items }: BannerSliderProps) => (
+const BannerSlider = ({ items }: BannerSliderProps) => (
   <S.Wrapper>
     <Slider settings={settings}>
       {items.map((item) => (
@@ -34,4 +34,4 @@ const BannerSlick = ({ items }: BannerSliderProps) => (
   </S.Wrapper>
 )
 
-export default BannerSlick
+export default BannerSlider
