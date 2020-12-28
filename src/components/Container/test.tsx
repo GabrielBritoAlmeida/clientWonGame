@@ -1,3 +1,5 @@
+import { screen } from '@testing-library/react'
+
 import theme from 'styles/theme'
 import { renderWithTheme } from 'utils/tests/helpers'
 
@@ -9,6 +11,15 @@ describe('<Container />', () => {
       <Container>
         <span>Won Game</span>
       </Container>
+    )
+
+    const ribbon = screen.getByText(/won game/i)
+
+    expect(ribbon).toBeInTheDocument()
+
+    expect(container.firstChild).toHaveStyleRule(
+      'max-width',
+      theme.grid.container
     )
 
     expect(container.firstChild).toHaveStyleRule(
