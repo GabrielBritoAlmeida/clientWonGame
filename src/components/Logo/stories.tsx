@@ -13,13 +13,13 @@ export const Mobile: Story<LogoProps> = (args) => (
 
 Desktop.parameters = {
   backgrounds: {
-    default: 'dark'
+    default: 'won-dark'
   }
 }
 
 Mobile.parameters = {
   backgrounds: {
-    default: 'dark'
+    default: 'won-dark'
   },
   viewport: {
     defaultViewport: 'mobile1'

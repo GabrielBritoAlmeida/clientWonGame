@@ -13,9 +13,9 @@ describe('<Container />', () => {
       </Container>
     )
 
-    const ribbon = screen.getByText(/won game/i)
+    const textTest = screen.getByText(/won game/i)
 
-    expect(ribbon).toBeInTheDocument()
+    expect(textTest).toBeInTheDocument()
 
     expect(container.firstChild).toHaveStyleRule(
       'max-width',
