@@ -13,4 +13,18 @@ describe('<Home />', () => {
     expect(menuHome).toBeInTheDocument()
     expect(footerHome).toBeInTheDocument()
   })
+
+  it('should render sections', () => {
+    renderWithTheme(<Home />)
+
+    const news = screen.getByRole('heading', { name: /news/i })
+    const upcoming = screen.getByRole('heading', { name: /upcoming/i })
+    const most = screen.getByRole('heading', { name: /most popular/i })
+    const free = screen.getByRole('heading', { name: /free games/i })
+
+    expect(news).toBeInTheDocument()
+    expect(upcoming).toBeInTheDocument()
+    expect(most).toBeInTheDocument()
+    expect(free).toBeInTheDocument()
+  })
 })
