@@ -4,7 +4,7 @@ export type LineColorsProps = 'primary' | 'secondary'
 
 export type HeadingProps = {
   children: React.ReactNode
-  color: 'white' | 'black'
+  color?: 'white' | 'black'
   lineLeft?: boolean
   lineBottom?: boolean
   lineColor: LineColorsProps
