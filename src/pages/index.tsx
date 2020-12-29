@@ -1,13 +1,25 @@
-import Home from 'templates/Home'
+import Home, { HomeTemplateProps } from 'templates/Home'
 
-export default function Index(props: any) {
-  return <Home />
+import bannersMock from 'components/BannerSlider/mock'
+import gamesMock from 'components/GameCardSlider/mock'
+import highlightMock from 'components/Highlight/mock'
+
+export default function Index(props: HomeTemplateProps) {
+  return <Home {...props} />
 }
 
 export function getStaticProps() {
   return {
     props: {
-      heading: 'Olha'
+      banners: bannersMock,
+      newGames: gamesMock,
+      mostPopularHighlight: highlightMock,
+      mostPopularGames: gamesMock,
+      upcomingGames: gamesMock,
+      upcomingHighlight: highlightMock,
+      upcomingMoreGames: gamesMock,
+      freeGames: gamesMock,
+      freeHighlight: highlightMock
     }
   }
 }

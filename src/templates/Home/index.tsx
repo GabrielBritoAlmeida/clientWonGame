@@ -53,7 +53,7 @@ const Home = ({
         Most Popular
       </Heading>
 
-      <Highlight {...mostPopularGames} />
+      <Highlight {...mostPopularHighlight} />
       <GameCardSlider items={mostPopularGames} />
     </Container>
 
@@ -63,7 +63,7 @@ const Home = ({
       </Heading>
 
       <GameCardSlider items={upcomingGames} />
-      <Highlight {...upcomingGames} />
+      <Highlight {...upcomingHighlight} />
       <GameCardSlider items={upcomingMoreGames} />
     </Container>
 
