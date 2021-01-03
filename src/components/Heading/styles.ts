@@ -1,6 +1,6 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 import media from 'styled-media-query'
-import { HeadingProps, LineColorsProps } from '.'
+import { HeadingProps, LineColors } from '.'
 
 const wrapperModifiers = {
   small: (theme: DefaultTheme) => css`
@@ -18,12 +18,12 @@ const wrapperModifiers = {
     `};
   `,
 
-  lineLeft: (theme: DefaultTheme, lineColor: LineColorsProps) => css`
+  lineLeft: (theme: DefaultTheme, lineColor: LineColors) => css`
     padding-left: ${theme.spacings.xxsmall};
     border-left: 0.7rem solid ${theme.colors[lineColor]};
   `,
 
-  lineBottom: (theme: DefaultTheme, lineColor: LineColorsProps) => css`
+  lineBottom: (theme: DefaultTheme, lineColor: LineColors) => css`
     position: relative;
     margin-bottom: ${theme.spacings.medium};
 

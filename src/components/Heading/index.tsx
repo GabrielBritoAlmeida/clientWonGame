@@ -1,13 +1,13 @@
 import * as S from './styles'
 
-export type LineColorsProps = 'primary' | 'secondary'
+export type LineColors = 'primary' | 'secondary'
 
 export type HeadingProps = {
   children: React.ReactNode
   color?: 'white' | 'black'
   lineLeft?: boolean
   lineBottom?: boolean
-  lineColor: LineColorsProps
+  lineColor?: LineColors
   size?: 'small' | 'medium'
 }
 
