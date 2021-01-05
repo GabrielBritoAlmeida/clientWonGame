@@ -39,4 +39,16 @@ describe('<Checkbox />', () => {
       color: '#030517'
     })
   })
+
+  it('should render with label atribute line-height', () => {
+    renderWithTheme(
+      <Checkbox labelColor="black" label="checkbox label" labelFor="check" />
+    )
+
+    const textLine = screen.getByText(/checkbox label/i)
+
+    expect(textLine).toHaveStyle({
+      'line-height': '1.8rem'
+    })
+  })
 })
