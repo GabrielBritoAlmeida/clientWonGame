@@ -27,4 +27,16 @@ describe('<Checkbox />', () => {
     expect(checkEmptyId).toHaveAttribute('id', '')
     expect(notLabelIsExist).not.toBeInTheDocument()
   })
+
+  it('should render with black label', () => {
+    renderWithTheme(
+      <Checkbox labelColor="black" label="checkbox label" labelFor="check" />
+    )
+
+    const textBlack = screen.getByText(/checkbox label/i)
+
+    expect(textBlack).toHaveStyle({
+      color: '#030517'
+    })
+  })
 })
