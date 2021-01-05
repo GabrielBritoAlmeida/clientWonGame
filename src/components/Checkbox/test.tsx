@@ -17,4 +17,14 @@ describe('<Checkbox />', () => {
     expect(textIsExist).toBeInTheDocument()
     expect(atributeIsExist).toHaveAttribute('for', 'check')
   })
+
+  it('should render without label', () => {
+    renderWithTheme(<Checkbox />)
+
+    const checkEmptyId = screen.getByRole('checkbox')
+    const notLabelIsExist = screen.queryByLabelText('checkbox')
+
+    expect(checkEmptyId).toHaveAttribute('id', '')
+    expect(notLabelIsExist).not.toBeInTheDocument()
+  })
 })
