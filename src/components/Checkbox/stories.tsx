@@ -13,3 +13,9 @@ CheckLabel.args = {
   label: 'action',
   labelFor: 'action check'
 }
+
+CheckLabel.parameters = {
+  backgrounds: {
+    default: 'won-dark'
+  }
+}
