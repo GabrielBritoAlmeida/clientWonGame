@@ -10,6 +10,9 @@ export default {
 } as Meta
 
 export const Default: Story<CheckboxProps> = (args) => <Checkbox {...args} />
+export const CheckTrue: Story<CheckboxProps> = (args) => (
+  <Checkbox isChecked {...args} />
+)
 export const CheckLabel: Story<CheckboxProps> = (args) => <Checkbox {...args} />
 
 CheckLabel.args = {
