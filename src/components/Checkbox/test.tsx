@@ -72,5 +72,30 @@ describe('<Checkbox />', () => {
       // toHaveBeenCalledTimes(1) garante que a função foi chamada apenas uma vez
       expect(onCheck).toHaveBeenCalledTimes(1)
     })
+
+    expect(onCheck).toHaveBeenCalledWith(true)
+  })
+
+  it('should onCheck status true with isChecked', async () => {
+    const onCheck = jest.fn()
+
+    renderWithTheme(
+      <Checkbox isChecked label="Checkbox" labelFor="check" onCheck={onCheck} />
+    )
+
+    //Verifica se a função não foi chamada no momento de renderizar
+    expect(onCheck).not.toHaveBeenCalled()
+
+    const buttonCheck = screen.getByRole('checkbox')
+
+    // simula o evento de click
+    userEvent.click(buttonCheck)
+
+    await waitFor(() => {
+      // toHaveBeenCalledTimes(1) garante que a função foi chamada apenas uma vez
+      expect(onCheck).toHaveBeenCalledTimes(1)
+    })
+
+    expect(onCheck).toHaveBeenCalledWith(false)
   })
 })
