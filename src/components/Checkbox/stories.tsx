@@ -1,13 +1,16 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import Checkbox, { CheckBoxProps } from '.'
+import Checkbox, { CheckboxProps } from '.'
 
 export default {
   title: 'Checkbox',
-  component: Checkbox
+  component: Checkbox,
+  argTypes: {
+    onCheck: { action: 'check' }
+  }
 } as Meta
 
-export const Default: Story<CheckBoxProps> = (args) => <Checkbox {...args} />
-export const CheckLabel: Story<CheckBoxProps> = (args) => <Checkbox {...args} />
+export const Default: Story<CheckboxProps> = (args) => <Checkbox {...args} />
+export const CheckLabel: Story<CheckboxProps> = (args) => <Checkbox {...args} />
 
 CheckLabel.args = {
   label: 'action',
