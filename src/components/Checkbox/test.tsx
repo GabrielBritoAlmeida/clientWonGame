@@ -1,5 +1,6 @@
-import { screen } from '@testing-library/react'
+import { screen, waitFor } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
+import userEvent from '@testing-library/user-event'
 
 import Checkbox from '.'
 
@@ -49,6 +50,27 @@ describe('<Checkbox />', () => {
 
     expect(textLine).toHaveStyle({
       'line-height': '1.8rem'
+    })
+  })
+
+  it('should dispatch onCheck when status changes', async () => {
+    const onCheck = jest.fn()
+
+    renderWithTheme(
+      <Checkbox label="Checkbox" labelFor="check" onCheck={onCheck} />
+    )
+
+    //Verifica se a função não foi chamada no momento de renderizar
+    expect(onCheck).not.toHaveBeenCalled()
+
+    const buttonCheck = screen.getByRole('checkbox')
+
+    // simula o evento de click
+    userEvent.click(buttonCheck)
+
+    await waitFor(() => {
+      // toHaveBeenCalledTimes(1) garante que a função foi chamada apenas uma vez
+      expect(onCheck).toHaveBeenCalledTimes(1)
     })
   })
 })
