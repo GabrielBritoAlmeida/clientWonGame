@@ -5,6 +5,14 @@ import { renderWithTheme } from 'utils/tests/helpers'
 import 'jest-styled-components'
 
 describe('<Logo />', () => {
+  it('should render the logo with id passed', () => {
+    const { container } = renderWithTheme(<Logo id="myId" />)
+
+    const idLogo = container.querySelector('#paint_linear_myId')
+
+    expect(idLogo).toBeInTheDocument()
+  })
+
   it('should render a white label by default', () => {
     renderWithTheme(<Logo />)
     expect(screen.getByLabelText(/Won Games/i).parentElement).toHaveStyle({
