@@ -1,14 +1,15 @@
 import Link from 'next/link'
+
 import { useState } from 'react'
-import { Menu2 as MenuIcon } from '@styled-icons/remix-line/Menu2'
-import { Search as SearchIcon } from '@styled-icons/boxicons-regular/Search'
+import { Menu2 as MenuIcon } from '@styled-icons/remix-fill/Menu2'
 import { ShoppingCart as ShoppingCartIcon } from '@styled-icons/material-outlined/ShoppingCart'
+import { Search as SearchIcon } from '@styled-icons/material-outlined/Search'
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
 
 import Button from 'components/Button'
 import Logo from 'components/Logo'
-import * as S from './styles'
 import MediaMatch from 'components/MediaMatch'
+import * as S from './styles'
 
 export type MenuProps = {
   username?: string
@@ -26,24 +27,29 @@ const Menu = ({ username }: MenuProps) => {
       </MediaMatch>
 
       <S.LogoWrapper>
-        <Logo hideOnMobile />
+        <Link href="/" passHref>
+          <a>
+            <Logo hideOnMobile />
+          </a>
+        </Link>
       </S.LogoWrapper>
 
       <MediaMatch greaterThan="medium">
         <S.MenuNav>
-          <S.MenuLink href="#">Home</S.MenuLink>
+          <Link href="/" passHref>
+            <S.MenuLink>Home</S.MenuLink>
+          </Link>
           <S.MenuLink href="#">Explore</S.MenuLink>
         </S.MenuNav>
       </MediaMatch>
 
       <S.MenuGroup>
         <S.IconWrapper>
-          <SearchIcon aria-label="search" />
+          <SearchIcon aria-label="Search" />
         </S.IconWrapper>
         <S.IconWrapper>
-          <ShoppingCartIcon aria-label="open shopping cart" />
+          <ShoppingCartIcon aria-label="Open Shopping Cart" />
         </S.IconWrapper>
-
         {!username && (
           <MediaMatch greaterThan="medium">
             <Link href="/sign-in" passHref>
@@ -54,27 +60,32 @@ const Menu = ({ username }: MenuProps) => {
       </S.MenuGroup>
 
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
-        <CloseIcon aria-label="Close menu" onClick={() => setIsOpen(false)} />
+        <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
         <S.MenuNav>
-          <S.MenuLink href="#">Home</S.MenuLink>
+          <Link href="/" passHref>
+            <S.MenuLink>Home</S.MenuLink>
+          </Link>
           <S.MenuLink href="#">Explore</S.MenuLink>
 
           {!!username && (
             <>
-              <S.MenuLink href="#">My Acount</S.MenuLink>
+              <S.MenuLink href="#">My account</S.MenuLink>
               <S.MenuLink href="#">Wishlist</S.MenuLink>
             </>
           )}
         </S.MenuNav>
+
         {!username && (
           <S.RegisterBox>
-            <Button fullWidth size="large">
-              Log in now
-            </Button>
+            <Link href="/sign-in" passHref>
+              <Button fullWidth size="large" as="a">
+                Sign in
+              </Button>
+            </Link>
             <span>or</span>
-            <S.CreateAcont href="#" title="Sign in">
-              Sign Up
-            </S.CreateAcont>
+            <Link href="/sign-up" passHref>
+              <S.CreateAccount title="Sign Up">Sign Up</S.CreateAccount>
+            </Link>
           </S.RegisterBox>
         )}
       </S.MenuFull>
